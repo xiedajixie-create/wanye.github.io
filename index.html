@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人介绍 - 谢浩辰</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.3) 0%, rgba(6, 182, 212, 0.3) 100%);
+            z-index: -1;
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            margin: 0 auto 20px;
+            object-fit: cover;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .avatar:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .name {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .title {
+            font-size: 1.2em;
+            opacity: 0.85;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            animation: slideIn 0.6s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #10b981;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(16, 185, 129, 0.4);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .section-content {
+            color: #d1d5db;
+            line-height: 1.8;
+            font-size: 1.05em;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .skill-tag {
+            background: rgba(16, 185, 129, 0.15);
+            color: #10b981;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            font-weight: 500;
+        }
+
+        .skill-tag:hover {
+            background: rgba(16, 185, 129, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #d1d5db;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(5px);
+        }
+
+        .contact-item::before {
+            content: '•';
+            color: #10b981;
+            font-size: 1.5em;
+            margin-right: 5px;
+        }
+
+        .footer {
+            background: rgba(0, 0, 0, 0.2);
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 40px 20px;
+            }
+            
+            .name {
+                font-size: 2em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="Screenshot_2025-11-02-18-33-01-53_e39d2c7de19156b0683cd93e8735f348.jpg" alt="个人头像" class="avatar">
+            <h1 class="name">谢浩辰</h1>
+            <p class="title">全栈开发工程师 | 创意设计师</p>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">关于我</h2>
+                <div class="section-content">
+                    <p>大家好！我是一名充满激情的全栈开发工程师，拥有5年的Web开发经验。我热爱编程，享受将创意转化为现实的过程。除了技术，我还对设计和用户体验有着浓厚的兴趣，致力于创造既美观又实用的数字产品。</p>
+                    <p>我相信技术应该服务于人，让复杂的事情变得简单。在我的职业生涯中，我始终追求代码的优雅性和用户体验的完美平衡。</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">专业技能</h2>
+                <div class="section-content">
+                    <p>我精通多种前后端技术，能够快速适应新技术并解决复杂问题。</p>
+                    <div class="skills">
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">UI/UX设计</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Docker</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">工作经历</h2>
+                <div class="section-content">
+                    <p><strong>高级前端开发工程师 | ABC科技公司</strong> (2021.03 - 至今)</p>
+                    <p>负责公司核心产品的前端架构设计和开发，带领团队完成多个重要项目，提升了用户体验和系统性能。</p>
+                    <br>
+                    <p><strong>全栈开发工程师 | XYZ创业公司</strong> (2019.06 - 2021.02)</p>
+                    <p>参与产品从概念到上线的全过程，独立负责多个模块的开发，积累了丰富的项目经验。</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">教育背景</h2>
+                <div class="section-content">
+                    <p><strong>计算机科学与技术学士</strong></p>
+                    <p>北京大学 | 2015.09 - 2019.06</p>
+                    <p>主修课程：数据结构、算法分析、软件工程、数据库系统、计算机网络等</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">联系方式</h2>
+                <div class="section-content">
+                    <div class="contact-info">
+                        <div class="contact-item">📧 your.email@example.com</div>
+                        <div class="contact-item">📱 +86 19151482081</div>
+                        <div class="contact-item">🏠 广西壮族自治区</div>
+                        <div class="contact-item">🔗 github.com/yourusername</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 谢浩辰. 保留所有权利 | 最后更新时间：2025年11月2日</p>
+        </div>
+    </div>
+
+    <script>
+        // 添加页面加载动画
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach((section, index) => {
+                section.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+
+        // 添加技能标签点击效果
+        const skillTags = document.querySelectorAll('.skill-tag');
+        skillTags.forEach(tag => {
+            tag.addEventListener('click', function() {
+                this.style.transform = 'scale(1.1)';
+                this.style.boxShadow = '0 5px 15px rgba(16, 185, 129, 0.4)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                    this.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+                }, 200);
+            });
+        });
+
+        // 添加滚动显示效果
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
