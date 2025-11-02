@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人自我介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        .profile-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 40px;
+            text-align: center;
+        }
+        .avatar {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #4299e1;
+            margin-bottom: 25px;
+        }
+        .name {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+        .title {
+            font-size: 1.1rem;
+            color: #4299e1;
+            margin-bottom: 25px;
+        }
+        .intro {
+            font-size: 1rem;
+            color: #4a5568;
+            margin-bottom: 30px;
+            line-height: 1.8;
+            text-align: left;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        .skill-tag {
+            background-color: #e8f4f8;
+            color: #4299e1;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        .contact {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .contact-link {
+            color: #4299e1;
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.3s;
+        }
+        .contact-link:hover {
+            color: #2b6cb0;
+        }
+        @media (max-width: 600px) {
+            .profile-card {
+                padding: 30px 20px;
+            }
+            .avatar {
+                width: 120px;
+                height: 120px;
+            }
+            .name {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-card">
+            <img src="IMG_20241117_200757.jpg" alt="个人头像" class="avatar" onerror="this.src='https://via.placeholder.com/160'; this.alt='默认头像'">
+            <h1 class="name">谢浩辰</h1>
+            <p class="title">产品设计师 | 18年互联网行业经验</p>
+            <div class="intro">
+                您好，我是谢浩辰，一名深耕互联网领域十八载的产品设计师。我专注于用户体验设计，擅长将商业诉求、用户痛点与技术实现巧妙融合，以设计驱动价值创造。工作之余，我热爱用镜头捕捉生活瞬间，也热衷徒步探索自然，始终对未知保持好奇，在设计与生活的平衡中持续成长。
+            </div>
+            <div class="skills">
+                <span class="skill-tag">UI/UX设计</span>
+                <span class="skill-tag">产品策略</span>
+                <span class="skill-tag">用户研究</span>
+                <span class="skill-tag">团队协作</span>
+                <span class="skill-tag">创新思维</span>
+            </div>
+            <div class="contact">
+                <a href="mailto:example@xxx.com" class="contact-link">✉️ 邮箱联系</a>
+                <a href="https://github.com/yourname" target="_blank" class="contact-link">🐙 GitHub</a>
+                <a href="https://www.linkedin.com/in/yourname" target="_blank" class="contact-link">🔗 领英</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
